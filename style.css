@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
 
 :root {
-/* Colors */
+  /* Colors */
 
-/* Primary */
---nutmeg: hsl(14, 45%, 36%);
---darkraspberry: hsl(332, 51%, 32%);
+  /* Primary */
+  --nutmeg: hsl(14, 45%, 36%);
+  --darkraspberry: hsl(332, 51%, 32%);
 
-/* Neutral */
---white: hsl(0, 0%, 100%);
---rosewhite: hsl(330, 100%, 98%);
---eggshell: hsl(30, 54%, 90%);
---lightgrey: hsl(30, 18%, 87%);
---wengebrown: hsl(30, 10%, 34%);
---darkcharcoal: hsl(24, 5%, 18%);
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --rosewhite: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --lightgrey: hsl(30, 18%, 87%);
+  --wengebrown: hsl(30, 10%, 34%);
+  --darkcharcoal: hsl(24, 5%, 18%);
 
-/* Typography */
+  /* Typography */
 
-/* Body Copy */
---p-font-size: 16px;
+  /* Body Copy */
+  --p-font-size: 16px;
 
-/* Fonts */
---header-font-family: 'Young Serif', serif;
---body-font-family: 'Outfit', sans-serif;
---normal: 400;
---semibold: 600;
---bold: 700;
+  /* Fonts */
+  --header-font-family: 'Young Serif', serif;
+  --body-font-family: 'Outfit', sans-serif;
+  --normal: 400;
+  --semibold: 600;
+  --bold: 700;
 }
 
 /* Reset */
@@ -46,6 +46,7 @@
 img {
   display: block;
   max-width: 100%;
+  border-radius: 10px;
 }
 
 body {
@@ -67,9 +68,20 @@ h2 {
   font-family: var(--header-font-family);
 }
 
-p, li, tr, td {
+p,
+li,
+tr,
+td {
   font-size: var(--p-font-size);
   color: var(--wengebrown);
+}
+
+td {
+  padding: .5rem 2rem;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--lightgrey);
 }
 
 span {
@@ -77,58 +89,58 @@ span {
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .card {
   background-color: var(--white);
   padding: 1.75rem;
   margin: 2rem;
+  border-radius: 25px;
 }
 
-.card > * {
-  margin-block: 1.25rem;
+.card>* {
+  margin: .8rem;
 }
 
-.ingredient,
-.instruction {
+.ingredients,
+.instructions {
   border-bottom: 1px solid var(--lightgrey);
 }
 
-.ingredient-title,
-.instruction-title,
+.ingredients-title,
+.instructions-title,
 .nutrition-title {
   font-size: 1.8rem;
+  margin-top: 1.2rem;
   margin-bottom: 1.3rem;
 }
 
-.ingredient-list,
-.instruction-list {
-  margin-bottom: 1rem;
+.ingredients-list,
+.instructions-list {
+  margin-bottom: 1.3rem;
 }
 
-.prep-item,
-.ingredient-item,
-.instruction-item {
-  padding-bottom: 1rem;
-  padding-inline: 1rem;
+.preparation-item,
+.ingredients-item,
+.instructions-item {
+  padding-bottom: .5rem;
 }
 
-.ingredient-item,
-.instruction-item {
-  line-height: 1;
+.ingredients-item,
+.instructions-item {
   margin-left: 1.45rem;
 }
 
 /* Preparation time */
-.prep {
+.preparation {
   padding: 1.5rem;
   background-color: var(--rosewhite);
   border-radius: 10px;
 }
 
-.prep-title {
+.preparation-title {
   font-family: var(--body-font-family);
   font-weight: var(--bold);
   font-size: 1.2rem;
@@ -136,34 +148,40 @@ table {
   margin-bottom: 1rem;
 }
 
-.prep-list {
+.preparation-list {
   margin-left: 1.5rem;
 }
 
-.prep-item {
+.preparation-item {
   padding-left: 1rem;
 }
 
-.prep-item::marker {
+.preparation-item::marker {
   color: var(--darkraspberry);
   font-size: .7rem;
 }
 
 /* Ingredients */
-
-.ingredient-item::marker {
+.ingredients-item::marker {
   color: var(--nutmeg);
   font-size: .7rem;
 }
 
 /* Instructions */
+.instructions-item {
+  line-height: 1.5;
+  margin-bottom: .2rem;
+}
 
-.instruction-item::marker {
+.instructions-item::marker {
   color: var(--nutmeg);
   font-weight: var(--bold);
 }
 
 /* Nutrition */
+.nutrition {
+  width: 100%;
+}
 
 .nutrition-title {
   text-align: start;
@@ -172,12 +190,14 @@ table {
 }
 
 .nutrition-description {
-  padding-block: 1rem;
+  text-align: start;
+  margin-bottom: 1rem;
 }
 
 .nutrition-value {
   font-weight: var(--bold);
   color: var(--nutmeg);
+  padding: 1rem;
 }
 
 /* Footer */
