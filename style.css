@@ -52,7 +52,8 @@ img {
 body {
   background-color: var(--eggshell);
   font-family: var(--body-font-family);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   place-items: center;
   height: 100vh;
 }
@@ -96,12 +97,20 @@ table {
 .card {
   background-color: var(--white);
   padding: 1.75rem;
-  margin: 2rem;
   border-radius: 25px;
 }
 
 .card>* {
-  margin: .8rem;
+  margin: 1rem;
+}
+
+.card-img-container {
+  padding-bottom: 1rem;
+}
+
+.card-description {
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .ingredients,
@@ -131,6 +140,8 @@ table {
 .ingredients-item,
 .instructions-item {
   margin-left: 1.45rem;
+  padding-left: 1rem;
+  line-height: 1.5;
 }
 
 /* Preparation time */
@@ -154,6 +165,7 @@ table {
 
 .preparation-item {
   padding-left: 1rem;
+  line-height: 1.5;
 }
 
 .preparation-item::marker {
@@ -169,7 +181,6 @@ table {
 
 /* Instructions */
 .instructions-item {
-  line-height: 1.5;
   margin-bottom: .2rem;
 }
 
