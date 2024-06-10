@@ -4,28 +4,28 @@
   /* Colors */
 
   /* Primary */
-  --nutmeg: hsl(14, 45%, 36%);
-  --darkraspberry: hsl(332, 51%, 32%);
+  --clr-nutmeg: hsl(14, 45%, 36%);
+  --clr-darkraspberry: hsl(332, 51%, 32%);
 
   /* Neutral */
-  --white: hsl(0, 0%, 100%);
-  --rosewhite: hsl(330, 100%, 98%);
-  --eggshell: hsl(30, 54%, 90%);
-  --lightgrey: hsl(30, 18%, 87%);
-  --wengebrown: hsl(30, 10%, 34%);
-  --darkcharcoal: hsl(24, 5%, 18%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-rosewhite: hsl(330, 100%, 98%);
+  --clr-eggshell: hsl(30, 54%, 90%);
+  --clr-lightgrey: hsl(30, 18%, 87%);
+  --clr-wengebrown: hsl(30, 10%, 34%);
+  --clr-darkcharcoal: hsl(24, 5%, 18%);
 
   /* Typography */
 
   /* Body Copy */
-  --p-font-size: 16px;
+  --fs-p: 16px;
 
   /* Fonts */
-  --header-font-family: 'Young Serif', serif;
-  --body-font-family: 'Outfit', sans-serif;
-  --normal: 400;
-  --semibold: 600;
-  --bold: 700;
+  --ff-heading: 'Young Serif', serif;
+  --ff-body: 'Outfit', sans-serif;
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 }
 
 /* Reset */
@@ -42,51 +42,37 @@
   box-sizing: border-box;
 }
 
-/* Base */
 img {
   display: block;
   max-width: 100%;
-  border-radius: 10px;
 }
 
 body {
-  background-color: var(--eggshell);
-  font-family: var(--body-font-family);
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--clr-eggshell);
+  font-family: var(--ff-body);
+  display: grid;
+  place-content: center;
 }
 
 h1 {
-  color: var(--darkcharcoal);
-  font-family: var(--header-font-family);
+  color: var(--clr-darkcharcoal);
+  font-family: var(--ff-heading);
   font-size: 40px;
+  padding-block: 1rem;
 }
 
 h2 {
-  color: var(--nutmeg);
-  font-family: var(--header-font-family);
+  color: var(--clr-nutmeg);
+  font-family: var(--ff-heading);
 }
 
 p,
 li,
 tr,
 td {
-  font-size: var(--p-font-size);
-  color: var(--wengebrown);
-}
-
-td {
-  padding: .5rem 2rem;
-}
-
-tr:not(:last-child) {
-  border-bottom: 1px solid var(--lightgrey);
-}
-
-span {
-  font-weight: var(--bold);
+  font-size: var(--fs-p);
+  color: var(--clr-wengebrown);
 }
 
 table {
@@ -94,18 +80,36 @@ table {
   border-spacing: 0;
 }
 
-.card {
-  background-color: var(--white);
-  padding: 1.75rem;
-  border-radius: 25px;
+tr {
+  margin: auto;
 }
 
-.card>* {
-  margin: 1rem;
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--clr-lightgrey);
+}
+
+td {
+  padding: .8rem 2rem;
+}
+
+span {
+  font-weight: var(--fw-bold);
+}
+
+.card {
+  max-width: 736px;
+  background-color: var(--clr-white);
+  margin: 5rem auto;
+  padding: 2.5rem;
+  border-radius: 25px;
 }
 
 .card-img-container {
   padding-bottom: 1rem;
+}
+
+.card-img {
+  border-radius: 10px;
 }
 
 .card-description {
@@ -113,9 +117,14 @@ table {
   line-height: 1.5;
 }
 
+.section {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .ingredients,
 .instructions {
-  border-bottom: 1px solid var(--lightgrey);
+  border-bottom: 1px solid var(--clr-lightgrey);
 }
 
 .ingredients-title,
@@ -147,15 +156,15 @@ table {
 /* Preparation time */
 .preparation {
   padding: 1.5rem;
-  background-color: var(--rosewhite);
+  background-color: var(--clr-rosewhite);
   border-radius: 10px;
 }
 
 .preparation-title {
-  font-family: var(--body-font-family);
-  font-weight: var(--bold);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
   font-size: 1.2rem;
-  color: var(--darkraspberry);
+  color: var(--clr-darkraspberry);
   margin-bottom: 1rem;
 }
 
@@ -169,13 +178,13 @@ table {
 }
 
 .preparation-item::marker {
-  color: var(--darkraspberry);
+  color: var(--clr-darkraspberry);
   font-size: .7rem;
 }
 
 /* Ingredients */
 .ingredients-item::marker {
-  color: var(--nutmeg);
+  color: var(--clr-nutmeg);
   font-size: .7rem;
 }
 
@@ -185,8 +194,8 @@ table {
 }
 
 .instructions-item::marker {
-  color: var(--nutmeg);
-  font-weight: var(--bold);
+  color: var(--clr-nutmeg);
+  font-weight: var(--fw-bold);
 }
 
 /* Nutrition */
@@ -196,8 +205,8 @@ table {
 
 .nutrition-title {
   text-align: start;
-  font-family: var(--header-font-family);
-  color: var(--nutmeg);
+  font-family: var(--ff-heading);
+  color: var(--clr-nutmeg);
 }
 
 .nutrition-description {
@@ -206,15 +215,15 @@ table {
 }
 
 .nutrition-value {
-  font-weight: var(--bold);
-  color: var(--nutmeg);
-  padding: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-nutmeg);
 }
 
 /* Footer */
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding: 1rem;
 }
 
 .attribution a {
