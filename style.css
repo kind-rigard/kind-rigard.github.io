@@ -48,7 +48,6 @@ img {
 }
 
 body {
-  min-height: 100vh;
   background-color: var(--clr-eggshell);
   font-family: var(--ff-body);
   display: grid;
@@ -58,7 +57,7 @@ body {
 h1 {
   color: var(--clr-darkcharcoal);
   font-family: var(--ff-heading);
-  font-size: 40px;
+  font-size: 2.5rem;
   padding-block: 1rem;
 }
 
@@ -99,7 +98,7 @@ span {
 .card {
   max-width: 736px;
   background-color: var(--clr-white);
-  margin: 5rem auto;
+  margin: 7rem auto;
   padding: 2.5rem;
   border-radius: 25px;
 }
@@ -110,6 +109,11 @@ span {
 
 .card-img {
   border-radius: 10px;
+}
+
+.card-title {
+  line-height: 1;
+  margin-bottom: .25rem;
 }
 
 .card-description {
@@ -155,7 +159,7 @@ span {
 
 /* Preparation time */
 .preparation {
-  padding: 1.5rem;
+  padding: 1.4rem;
   background-color: var(--clr-rosewhite);
   border-radius: 10px;
 }
@@ -228,4 +232,19 @@ span {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .card img {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
 }
